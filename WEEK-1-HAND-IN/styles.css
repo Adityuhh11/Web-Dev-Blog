@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #040303;
+
+}
+
+.Navigation{
+    background-color: #171414;
+    height: 5rem;
+    display: flex;
+    justify-content: right;
+}
+a{
+    font-family: 'Geist Mono', monospace;
+    margin-right: 1.4rem;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+
+}
+
+.links{
+    margin:1.5rem;
+}
+
+.Title{
+    margin-top: 2rem;
+}
+.title-text{
+    color: #FFFFFF;
+    font-family: 'Geist Mono', monospace;
+    font-size: 5rem;
+    margin-bottom: 10px;
+}
+.info{
+    width: 500px;
+    color: #FFFFFF;
+    font-family: 'Geist Mono', monospace;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.content {
+    margin-top: 4rem;
+    max-width: 700px;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1.1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(23, 20, 20, 0.85);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    text-align: justify;
+}
