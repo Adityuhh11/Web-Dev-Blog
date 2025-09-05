@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #040303;
+
+}
+.Navigation{
+    background-color: #171414;
+    height: 4rem;
+    display: flex;
+    justify-content: right;
+}
+a{
+    /* font-family: 'Geist Mono', monospace; */
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: 1.4rem;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+
+}
