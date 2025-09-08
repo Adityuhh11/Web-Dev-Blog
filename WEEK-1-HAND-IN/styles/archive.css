@@ -50,6 +50,7 @@ a{
     margin: 2rem;
 
 }
-.archive-content,.archive-title{
-    /* margin-top: 1rem; */
+.archive-title{
+    margin-bottom: 1rem;
+    text-decoration: underline;
 }
