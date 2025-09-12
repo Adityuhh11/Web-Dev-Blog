@@ -1,0 +1,17 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "A personal blog ",
+  "main": "index.js",
+  "scripts": {
+    "test": "run "
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Aditya Sai Prem",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
