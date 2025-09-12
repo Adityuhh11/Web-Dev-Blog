@@ -54,3 +54,50 @@ a{
     margin-bottom: 1rem;
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .Navigation {
+        justify-content: center;
+    }
+
+    a {
+        font-size: 1.1rem;
+    }
+
+    .archive-block {
+        max-width: 90%;
+        padding: 1.5rem;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Navigation {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    a {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .links {
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .archive-block {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
+
+    .archive {
+        margin: 1rem;
+    }
+}

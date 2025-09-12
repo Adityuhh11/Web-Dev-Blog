@@ -67,3 +67,54 @@ a{
     line-height: 1.7;
     text-align: justify;
 }
+
+@media (max-width: 768px) {
+    .title-text {
+        font-size: 3.5rem;
+    }
+
+    .info {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .content {
+        padding: 1.5rem;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Navigation {
+        justify-content: center;
+    }
+
+    a {
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+
+    .links {
+        margin: 1.5rem 0;
+    }
+
+    .title-text {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .info {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .content {
+        padding: 1rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
