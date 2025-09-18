@@ -5,15 +5,16 @@
 
 body{
     background-color: #040303;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 
 .Title{
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-left: 7rem;
     background-color: #040303;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
 }
 .title-text{
     color: white;
@@ -46,7 +47,7 @@ body{
 .scroll-arrow-container {
   display: flex;
   justify-content: center;
-  margin-top: 8rem;
+  margin-top: 6rem;
   margin-bottom: 6rem;
   background-color: #040303;
   padding: 2rem 0;

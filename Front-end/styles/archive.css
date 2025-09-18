@@ -1,58 +1,143 @@
 *{
     margin: 0;
+    padding: 0;
 }
 
 body{
     background-color: #040303;
-
+    min-height: 100vh;
+    font-family: 'IBM Plex Mono', monospace;
 }
+
+/* Archive Title */
+.archive-page-title {
+    text-align: center;
+    margin: 4rem 0 3rem 0;
+}
+
+.archive-page-title h1 {
+    color: white;
+    font-size: 4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.archive-page-title p {
+    color: #888;
+    font-size: 1.2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 300;
+}
+
 .archive-block{
-    max-width: 1000px;
-    font-family: 'Courier New', Courier, monospace ;
+    max-width: 1200px;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: rgb(255, 255, 255);
-    margin-top: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(23, 20, 20, 0.85);
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    color: white;
+    margin: 2rem auto 4rem auto;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .archive{
+    width: 100%;
     max-width: 800px;
-    border: 2px;
-    border-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    margin: 2rem;
-
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
+.archive:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 .archive-title{
     margin-bottom: 1rem;
-    text-decoration: underline;
 }
 
+.archive-title h2 {
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.archive-content p {
+    color: #ccc;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    .archive-page-title h1 {
+        font-size: 3rem;
+    }
+    
+    .archive-page-title p {
+        font-size: 1rem;
+    }
+    
     .archive-block {
         max-width: 90%;
+        padding: 2rem;
+        margin: 1rem auto 3rem auto;
+    }
+    
+    .archive {
         padding: 1.5rem;
-        margin-top: 4rem;
+        margin: 1.5rem 0;
+    }
+    
+    .archive-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .archive-content p {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
+    .archive-page-title {
+        margin: 2rem 0;
+    }
+    
+    .archive-page-title h1 {
+        font-size: 2.5rem;
+    }
+    
     .archive-block {
-        margin-top: 2rem;
-        padding: 1rem;
+        padding: 1.5rem;
+        margin: 1rem auto 2rem auto;
     }
 
     .archive {
-        margin: 1rem;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .archive-title h2 {
+        font-size: 1.3rem;
     }
 }
