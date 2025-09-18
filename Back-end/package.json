@@ -1,10 +1,10 @@
 {
   "name": "back-end",
   "version": "1.0.0",
-  "description": "A personal blog ",
+  "description": "a personal blog post",
   "main": "index.js",
   "scripts": {
-    "test": "run "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "node"
@@ -12,6 +12,8 @@
   "author": "Aditya Sai Prem",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.1"
   }
 }
