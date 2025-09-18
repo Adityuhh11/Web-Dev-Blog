@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/Front-end/styles/navigation.css">
     <link rel="stylesheet" href="/Front-end/styles/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
-</head>
 <body>
-     <section class="Navigation">
-    <div class="links">
-     <a href="home.html">home</a>
-    <a href="about.html">about</a>
-    <a href="archive.html">archive</a>
-    <a href="contact.html">contact</a>
-    </div>  
-    </section>
     
     <section class="Title">
-        <h1 class="title-text">BLOGS.</h1>
+        <h1 class="title-text">BLOGS<span class="dot">.</span></h1>
         <div class="sub-title">
             <p>by Aditya Sai Prem</p>
         </div>
@@ -39,5 +31,55 @@
         <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
         </svg>
     </div>
+    <section class="recent-blogs">
+        <div class="recent-title">
+            <p>Recent blogs</p>
+        </div>
+        <div class="recent-blog-container" id="recent-blogs-list">
+            <div class="recent-blog">
+                <div class="recent-blog-title">
+                    <h2>My Journey into Web Development</h2>
+                </div>
+                <div class="recent-blog-content">
+                    <p>Exploring the fascinating world of modern web technologies, from HTML and CSS to JavaScript frameworks. A personal reflection on learning and growth in the tech industry.</p>
+                </div>
+            </div>
+            <div class="recent-blog">
+                <div class="recent-blog-title">
+                    <h2>Understanding JavaScript Promises</h2>
+                </div>
+                <div class="recent-blog-content">
+                    <p>A deep dive into asynchronous JavaScript programming. Learn how promises work, why they're essential, and how to use them effectively in your projects.</p>
+                </div>
+            </div>
+            <div class="recent-blog">
+                <div class="recent-blog-title">
+                    <h2>Building Responsive Layouts with CSS Grid</h2>
+                </div>
+                <div class="recent-blog-content">
+                    <p>Master the art of creating flexible, responsive web layouts using CSS Grid. Tips, tricks, and best practices for modern web design.</p>
+                </div>
+            </div>
+            <div class="recent-blog">
+                <div class="recent-blog-title">
+                    <h2>Node.js Backend Fundamentals</h2>
+                </div>
+                <div class="recent-blog-content">
+                    <p>Getting started with server-side JavaScript development. Learn about Express.js, MongoDB integration, and building scalable backend applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-links">
+            <a href="home.html" class="active">home</a>
+            <a href="about.html">about</a>
+            <a href="archive.html">archive</a>
+            <a href="contact.html">contact</a>
+        </div>
+    </nav>
+    
 </body>
 </html>
