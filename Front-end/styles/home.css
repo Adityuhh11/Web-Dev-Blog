@@ -148,10 +148,39 @@ body{
     max-width: 550px;
 }
 
-/* Responsive Design */
+@media (max-width: 1200px) {
+    .Title {
+        margin-left: 4rem;
+        padding: 3rem 0;
+    }
+    
+    .title-text {
+        font-size: 140px;
+    }
+    
+    .sub-title {
+        margin-left: 15rem;
+        font-size: 28px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .Title {
+        margin-left: 3rem;
+        padding: 2.5rem 0;
+    }
+    
+    .title-text {
+        font-size: 120px;
+    }
+    
+    .sub-title {
+        margin-left: 12rem;
+        font-size: 26px;
+    }
+    
     .recent-blogs {
-        padding: 0 4rem;
+        padding: 4rem 4rem;
         gap: 4rem;
     }
     
@@ -161,9 +190,32 @@ body{
 }
 
 @media (max-width: 768px) {
+    .Title {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding: 2rem 0;
+        text-align: center;
+    }
+    
+    .title-text {
+        font-size: 80px;
+    }
+    
+    .sub-title {
+        margin-left: 0;
+        text-align: center;
+        font-size: 22px;
+        margin-top: 1rem;
+    }
+    
+    .scroll-arrow-container {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    
     .recent-blogs {
         flex-direction: column;
-        padding: 0 2rem;
+        padding: 4rem 2rem;
         gap: 2rem;
     }
     
@@ -186,6 +238,48 @@ body{
     
     .recent-blog-content p {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Title {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1.5rem 0;
+    }
+    
+    .title-text {
+        font-size: 60px;
+        line-height: 1.1;
+    }
+    
+    .sub-title {
+        font-size: 18px;
+        margin-top: 0.5rem;
+    }
+    
+    .scroll-arrow-container {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        padding: 1rem 0;
+    }
+    
+    .recent-blogs {
+        padding: 3rem 1rem;
+    }
+    
+    .recent-title p {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+    
+    .recent-blog-title h2 {
+        font-size: 1.1rem;
+    }
+    
+    .recent-blog-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
 }
 
