@@ -1,13 +1,11 @@
-import express from "express";
 import dotenv from "dotenv";
-import connectDB from "../Blog-Project/src/db/index.db.js";
-import path from "path"
+import connectDB from "./src/db/index.db.js";
+import app from "./app.js";
+
 dotenv.config();
-const app = express()
 
 
-const __dirname = path.resolve(); // Get the absolute path of the project
-app.use(express.static(path.join(__dirname, './public')));
+
 
 
 connectDB()
