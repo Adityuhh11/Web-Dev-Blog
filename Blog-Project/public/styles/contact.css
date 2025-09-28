@@ -6,3 +6,41 @@ body{
     background-color: #040303;
 
 }
+
+.Contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+.contact-title{
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 5rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.contact-info{
+    color: #fff;
+    font-size: 1.7rem;
+    font-family: 'IBM Plex Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 1.2rem;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ccc;
+}
+    

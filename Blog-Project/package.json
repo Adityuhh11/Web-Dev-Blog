@@ -4,7 +4,8 @@
   "description": "a personal blog post",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "node"
@@ -21,5 +22,8 @@
     "mongodb": "^6.20.0",
     "mongoose": "^8.18.1",
     "npm": "^11.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
