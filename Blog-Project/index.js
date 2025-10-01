@@ -12,6 +12,7 @@ connectDB()
 .then(()=>{
     app.listen(process.env.PORT|| 3000,(()=>{
         console.log(`Server is running on port ${process.env.PORT}`)
+        console.log(`Local: http://localhost:${process.env.PORT || 8000}`);//You can Click the link in the console and go directly 
     }))
 })
 .catch((error)=>{
