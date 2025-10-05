@@ -10,6 +10,7 @@ app.use(cors({
     credentials:true,
 }))
 
+app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 
 // BLOG ROUTES

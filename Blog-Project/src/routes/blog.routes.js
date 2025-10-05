@@ -6,23 +6,23 @@ const __dirname = path.resolve();
 
 
 router.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname, "public/Pages/home.html"))
+    res.render(path.join(__dirname, "views/home.ejs"))
 })
 router.get("/about",(req,res)=>{
-    res.sendFile(path.join(__dirname, "public/Pages/about.html"))
+    res.render(path.join(__dirname, "views/about.ejs"))
 })
 router.get("/contact",(req,res)=>{
-    res.sendFile(path.join(__dirname, "public/Pages/contact.html"))
+    res.render(path.join(__dirname, "views/contact.ejs"))
 })
 router.get("/archive",(req,res)=>{
-    res.sendFile(path.join(__dirname, "public/Pages/archive.html"))
+    res.render(path.join(__dirname, "views/archive.ejs"))
 })
 router.get("/post",(req,res)=>{
-    res.sendFile(path.join(__dirname, "public/Pages/post.html"))
+    res.render(path.join(__dirname, "views/post.ejs"))
 })
 router.get("/post/:slug",(req,res)=>{
     console.log("requested post",req.params.slug)
-    res.sendFile(path.join(__dirname,"public/Pages/post.html"))
+    res.render(path.join(__dirname,"views/post.ejs"))
 })
 
 
