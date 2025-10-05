@@ -17,6 +17,9 @@ router.get("/contact",(req,res)=>{
 router.get("/archive",(req,res)=>{
     res.sendFile(path.join(__dirname, "public/Pages/archive.html"))
 })
+router.get("/post",(req,res)=>{
+    res.sendFile(path.join(__dirname, "public/Pages/post.html"))
+})
 router.get("/post/:slug",(req,res)=>{
     console.log("requested post",req.params.slug)
     res.sendFile(path.join(__dirname,"public/Pages/post.html"))
