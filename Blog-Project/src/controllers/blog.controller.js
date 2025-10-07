@@ -16,5 +16,22 @@ const AllBlogs  = asyncHandler(async(req,res)=>{
     });
 })
 
-export {recentBlogs, AllBlogs}
+const findBlog = asyncHandler(async (req, res) => {
+    const Blogid = req.params.id;
+    const blogdata = await Blog.findById(Blogid).populate("owner", "name");
 
+    if (!blogdata) {
+        return res.status(404).json({ message: "Blog not found" });
+    }
+
+    res.render("post", {
+        blog: blogdata
+    });
+})
+
+
+export {
+    recentBlogs,
+    AllBlogs,
+    findBlog,
+}

@@ -20,43 +20,25 @@
 <body>
     
     <section class="Title">
-        <h1 class="title-text">My First Blog</h1>
+
+        <h1 class="title-text"><%= blog.title %></h1>
         <div class="info">
-            <div><p>Monday,December 11th</p></div>
-            
-            <div><p>Aditya Sai Prem</p></div>
-            
+            <div><p><%= blog.date %></p></div>
+
+            <div><p><%= blog.owner.name %></p></div>
+
         </div>
     </section>
 
     <section class="content">
         <p>
-            Growing up in the vibrant city of Bangalore, Arjun was just another kid with big dreams and a curious mind. The bustling streets, the aroma of fresh dosas, and the sound of cricket matches in every alley formed the backdrop of his childhood. From a young age, Arjun was fascinated by music. He would spend hours listening to his father’s old cassette tapes, strumming a makeshift guitar made from rubber bands and a shoebox.
-        </p>
-        <p>
-            As he entered his teenage years, Arjun’s passion for music only grew stronger. He joined his school’s music club, where he met friends who shared his love for rock and roll. Together, they formed a band, practicing in cramped rooms and performing at local events. Their energy and unique sound quickly caught the attention of their peers, and soon, Arjun became known as the “rockstar” of his neighborhood.
-        </p>
-        <p>
-            Despite facing challenges and skepticism from those who believed music was not a “real” career, Arjun persevered. He balanced his studies with late-night jam sessions, pouring his heart into every performance. His dedication paid off when his band won a city-wide competition, earning them a chance to record their first album.
-        </p>
-        <p>
-            The album’s release marked a turning point in Arjun’s life. His songs resonated with people across Bangalore, and his story inspired many young dreamers to pursue their passions. Arjun’s journey from a curious kid to a celebrated musician became a symbol of hope and possibility in his community.
-        </p>
-        <p>
-            Today, Arjun continues to create music that reflects the spirit of Bangalore. He often visits schools to encourage children to follow their dreams, reminding them that with hard work and belief in oneself, anyone can become a rockstar in their own way.
+            <%= blog.content %>
         </p>
     </section>
     
     <!-- Bottom Navigation -->
         <%- include('partials/navigation.partial.ejs') %>
-    <!-- <nav class="bottom-nav">
-        <div class="nav-links">
-            <a href="home.html">home</a>
-            <a href="about.html">about</a>
-            <a href="archive.html">archive</a>
-            <a href="contact.html">contact</a>
-        </div>
-    </nav> -->
+    
     
 </body>
 </html>
