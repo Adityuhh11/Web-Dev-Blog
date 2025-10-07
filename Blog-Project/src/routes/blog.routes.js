@@ -1,13 +1,14 @@
 import { Router } from "express";
+import { recentBlogs } from "../controllers/blog.controller.js";
 import path from "path";
 
 const router = Router();
 const __dirname = path.resolve();
 
 
-router.get("/",(req,res)=>{
-    res.render(path.join(__dirname, "views/home.ejs"))
-})
+router.get("/", recentBlogs);
+
+
 router.get("/about",(req,res)=>{
     res.render(path.join(__dirname, "views/about.ejs"))
 })

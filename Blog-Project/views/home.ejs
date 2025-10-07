@@ -31,46 +31,36 @@
         <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
         </svg>
     </div>
+
+
+    <!-- Recent Blogs Section -->
     <section class="recent-blogs">
         <div class="recent-title">
             <p>Recent blogs</p>
         </div>
         <div class="recent-blog-container" id="recent-blogs-list">
-            <div class="recent-blog">
-                <div class="recent-blog-title">
-                    <h2>My Journey into Web Development</h2>
+            <% blogs.forEach(blog => { %>
+                <div class="recent-blog">
+                    <div class="recent-blog-title">
+                        <h2><%= blog.title %></h2>
+                    </div>
+                    <div class="recent-blog-content">
+                        <p><%= blog.description %></p>
+                    </div>
                 </div>
-                <div class="recent-blog-content">
-                    <p>Exploring the fascinating world of modern web technologies, from HTML and CSS to JavaScript frameworks. A personal reflection on learning and growth in the tech industry.</p>
+            <% }) %>
+
+            <% if (blogs.length === 0) { %>
+                <div class="no-blogs-message">
+                    <p>No recent blogs to show. Check back later!</p>
+                    <div class="view-all-button">
+                        <a href="archive">View All</a>
+                    </div>
                 </div>
-            </div>
-            <div class="recent-blog">
-                <div class="recent-blog-title">
-                    <h2>Understanding JavaScript Promises</h2>
-                </div>
-                <div class="recent-blog-content">
-                    <p>A deep dive into asynchronous JavaScript programming. Learn how promises work, why they're essential, and how to use them effectively in your projects.</p>
-                </div>
-            </div>
-            <div class="recent-blog">
-                <div class="recent-blog-title">
-                    <h2>Building Responsive Layouts with CSS Grid</h2>
-                </div>
-                <div class="recent-blog-content">
-                    <p>Master the art of creating flexible, responsive web layouts using CSS Grid. Tips, tricks, and best practices for modern web design.</p>
-                </div>
-            </div>
-            <div class="recent-blog">
-                <div class="recent-blog-title">
-                    <h2>Node.js Backend Fundamentals</h2>
-                </div>
-                <div class="recent-blog-content">
-                    <p>Getting started with server-side JavaScript development. Learn about Express.js, MongoDB integration, and building scalable backend applications.</p>
-                </div>
-            </div>
+            <% } %>
         </div>
     </section>
-    
+        
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <div class="nav-links">
