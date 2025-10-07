@@ -8,7 +8,7 @@ const router = Router();
 const __dirname = path.resolve();
 
 
-router.get("/", recentBlogs);
+router.get("/", recentBlogs,);
 
 
 router.get("/about",(req,res)=>{

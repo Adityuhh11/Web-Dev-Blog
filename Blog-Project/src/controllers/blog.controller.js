@@ -5,7 +5,7 @@ import asyncHandler from "../utils/asynchandler.js";
 const recentBlogs = asyncHandler(async(req,res)=>{
     const blogs = await Blog.find().sort({ createdAt: -1 }).limit(5)
     res.render("home", { 
-        blogs: blogs 
+        blogs: blogs ,
     });
 })
 
