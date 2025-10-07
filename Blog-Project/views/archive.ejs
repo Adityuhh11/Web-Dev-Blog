@@ -18,6 +18,29 @@
     </section>
 
     <section class="archive-block">
+
+        <% blogs.forEach(blog =>{ %>
+            <div class="archive">
+                <div class="archive-title">
+                    <h2><%= blog.title %></h2>
+                </div>
+                <div class="archive-content">
+                    <p><%= blog.content %></p>
+                </div>
+            </div>
+        <% }) %>
+        <% if(blogs.length === 0){ %>
+            <div class="no-blogs-message">
+                <p>No blogs available in the archive. Check back later!</p>
+            </div>
+        <% } %>
+<!-- 
+
+
+
+
+
+
         <div class="archive">
         <div class="archive-title">
             <h2>Problem With India</h2>
@@ -57,7 +80,7 @@
             <div class="archive-content">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nisi fugiat est quia quis cumque nostrum unde molestias totam ipsa, quaerat libero dolores consequuntur voluptatem incidunt eligendi exercitationem error repellat.</p>
             </div>
-        </div>
+        </div> -->
         
     </section>
     

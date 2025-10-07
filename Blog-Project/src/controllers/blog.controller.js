@@ -9,5 +9,12 @@ const recentBlogs = asyncHandler(async(req,res)=>{
     });
 })
 
-export {recentBlogs}
+const AllBlogs  = asyncHandler(async(req,res)=>{
+    const blogs = await Blog.find().sort({ createdAt: -1 })
+    res.render("archive", { 
+        blogs: blogs 
+    });
+})
+
+export {recentBlogs, AllBlogs}
 
