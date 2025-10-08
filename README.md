@@ -16,57 +16,44 @@ This project is a personal blog application built with **Node.js**, **Express**,
 
 Before you begin, ensure you have the following installed on your local machine:
 
-- **Node.js** (v14 or higher)
-- **npm** (usually comes with Node.js)
-- **MongoDB** (Make sure it's running locally or you have a connection string for a remote database).
-
----
-
-## Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### 1. Clone the repository
-
 ```bash
-git clone https://github.com/adityuhh11/web-dev-blog.git
-cd web-dev-blog/Blog-Project
+cd Blog-Project
 ```
+### 2. Install Dependencies
 
-### 2. Install dependencies
-
-Install the required npm packages.
-
+Once inside the `Blog-Project` directory, install the required packages using npm.
 ```bash
 npm install
 ```
+### 3. Set Up Environment Variables
 
-### 3. Set up environment variables
+Create a `.env` file inside the `Blog-Project` directory by making a copy of the `.envsample` file.
 
-Create a `.env` file in the `Blog-Project` directory. You can copy the example file:
+- On Windows (Command Prompt):
+  ```cmd
+  copy .envsample .env
+  ```
+- On macOS/Linux or Git Bash on Windows:
+  ```bash
+  cp .envsample .env
+  ```
 
-```bash
-cp .envsample .env
-```
-
-Now, open the `.env` file and add the following environment variables:
+Now, open the `.env` file and ensure it contains the following (the default values should work for a standard local setup):
 
 ```
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017
+MONGODB_URI=mongodb://localhost:27017/blogDB
 CORS_ORIGIN=*
 ```
-
-- **PORT:** The port on which the application will run.
-- **MONGODB_URI:** The connection string for your MongoDB database.
-- **CORS_ORIGIN:** The origin from which you want to allow requests.
+- **PORT**: The port where the application will be accessible.
+- **MONGODB_URI**: The connection string for your local MongoDB database.
+- **CORS_ORIGIN**: The origin from which you want to allow requests.
 
 ### 4. Running the application
 
 Once the dependencies are installed and the environment variables are set, you can start the server.
 
 To run the application in development mode (with hot-reloading):
-
 ```bash
 npm run dev
 ```
