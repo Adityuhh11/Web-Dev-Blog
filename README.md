@@ -16,15 +16,32 @@ This project is a personal blog application built with **Node.js**, **Express**,
 
 Before you begin, ensure you have the following installed on your local machine:
 
+- **Node.js** (v14 or higher)
+- **npm** (usually comes with Node.js)
+- **MongoDB** (Make sure it's running locally).
+
+---
+
+## How to Run This Project Locally
+
+Follow these steps to get the application running on your local machine.
+
+### 1. Navigate to the Project Directory
+
+Open your terminal and navigate into the `Blog-Project` folder.
+
 ```bash
 cd Blog-Project
 ```
+
 ### 2. Install Dependencies
 
 Once inside the `Blog-Project` directory, install the required packages using npm.
+
 ```bash
 npm install
 ```
+
 ### 3. Set Up Environment Variables
 
 Create a `.env` file inside the `Blog-Project` directory by making a copy of the `.envsample` file.
@@ -54,6 +71,7 @@ CORS_ORIGIN=*
 Once the dependencies are installed and the environment variables are set, you can start the server.
 
 To run the application in development mode (with hot-reloading):
+
 ```bash
 npm run dev
 ```
