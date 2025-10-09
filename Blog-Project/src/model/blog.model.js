@@ -15,10 +15,10 @@ const blogSchema =  new mongoose.Schema({
         required:true,
         index: true 
     },
-    category:{
-        type:String,
-        required:true,
-    },
+    // category:{
+    //     type:String,
+    //     required:true,
+    // },
     owner:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"User"

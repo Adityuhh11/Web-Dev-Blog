@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles/createblog.css">
+</head>
+<body>
+    <section class = "create-blog-container">
+        <form action="/createblog" method="POST">
+            <div class="header">
+                <div class="header-title">
+                    <h1>Create a Blog</h1>
+                </div>
+                <div class="submit-button">
+                    <button type="submit">Create Blog</button>
+                </div>
+                
+            </div>
+
+            <div class="form-group">
+                <label for="title-input">title</label>
+                <input id="title-input" type="text" name="title" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="desc-input">description</label>
+                <textarea id="desc-input" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="content-input">content</label>
+                <textarea id="content-input" name="content" rows="10" required></textarea>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
