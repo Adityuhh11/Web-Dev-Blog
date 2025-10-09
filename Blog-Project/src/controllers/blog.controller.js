@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import {Blog} from "../model/blog.model.js";
 import asyncHandler from "../utils/asynchandler.js";
 
-const uploadBlog = asynchandler(async(req,res)=>{
+const uploadBlog = asyncHandler(async(req,res)=>{
     const{title,description,content} = req.body
     if(!title || !description || !content){
         res.status(400)
@@ -23,26 +23,28 @@ const recentBlogs = asyncHandler(async(req,res)=>{
     });
 })
 
-const AllBlogs  = asyncHandler(async(req,res)=>{
-    const blogs = await Blog.find().sort({ createdAt: -1 })
+const AllBlogs = asyncHandler(async(req, res) => {
+    const blogs = await Blog.find().sort({ createdAt: -1 });
     res.render("archive", { 
         blogs: blogs 
     });
-})
+});
 
 const findBlog = asyncHandler(async (req, res) => {
-    const Blogid = req.params.id;
-    const blogdata = await Blog.findById(Blogid).populate("owner", "name");
+    const blogId = req.params.id;
+    const blogData = await Blog.findById(blogId).populate("owner", "name");
 
-    if (!blogdata) {
-        return res.status(404).json({ message: "Blog not found" });
+    if (!blogData) {
+        return res.status(404).render('404');
     }
 
     res.render("post", {
-        blog: blogdata
+        blog: {
+            ...blogData._doc,
+            date: blogData.createdAt.toLocaleDateString()
+        }
     });
-})
-
+});
 
 export {
     recentBlogs,

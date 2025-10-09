@@ -10,18 +10,20 @@ const router = Router();
 const __dirname = path.resolve();
 
 
-router.get("/", recentBlogs,);
+router.get("/", recentBlogs);
 
-router.post("/createblog",uploadBlog);
 
-router.get("/post/:slug", findBlog);
+router.get("/create", (req, res) => {
+    res.render("createblog");
+});
+
+router.post("/createblog", uploadBlog);
+
+
+
+router.get("/post/:id", findBlog);
 
 router.get("/archive", AllBlogs);
-
-// router.get("/post",(req,res)=>{
-//     res.render(path.join(__dirname, "views/post.ejs"))
-// })
-
 
 router.get("/about",(req,res)=>{
     res.render("about")
