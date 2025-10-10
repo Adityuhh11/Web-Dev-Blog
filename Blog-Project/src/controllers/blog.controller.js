@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import toObjectid from "mongoose";
 import {Blog} from "../model/blog.model.js";
 import asyncHandler from "../utils/asynchandler.js";
 
@@ -16,6 +16,22 @@ const uploadBlog = asyncHandler(async(req,res)=>{
     res.redirect(`/post/${newBlog._id}`); 
     // res.status(200).json({message:"Blog created successfully", blog:newBlog})
 })
+const deleteBlog = asyncHandler(async (req, res) => {
+    
+    const  blogId  = req.params.id;
+
+    if (!blogId) {
+        return res.status(400).render("404", { message: "No blog ID provided." });
+    }
+    
+    const deletedBlog = await Blog.findByIdAndDelete(blogId);
+
+    if (!deletedBlog) {
+        return res.status(404).render("404", { message: "Blog post not found." });
+    }
+
+    return res.redirect("/archive"); 
+});
 const recentBlogs = asyncHandler(async(req,res)=>{
     const blogs = await Blog.find().sort({ createdAt: -1 }).limit(5)
     res.render("home", { 
@@ -50,5 +66,6 @@ export {
     recentBlogs,
     AllBlogs,
     findBlog,
-    uploadBlog
+    uploadBlog,
+    deleteBlog
 }

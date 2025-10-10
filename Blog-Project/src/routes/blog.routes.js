@@ -2,7 +2,8 @@ import { Router } from "express";
 import { recentBlogs,
             AllBlogs,
             findBlog,
-            uploadBlog
+            uploadBlog,
+            deleteBlog
         } from "../controllers/blog.controller.js";
 import path from "path";
 
@@ -19,6 +20,7 @@ router.get("/create", (req, res) => {
 
 router.post("/createblog", uploadBlog);
 
+router.post("/delete/:id", deleteBlog);
 
 
 router.get("/post/:id", findBlog);

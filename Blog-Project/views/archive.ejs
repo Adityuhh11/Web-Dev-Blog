@@ -29,9 +29,17 @@
                         <p><%= blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : '' %></p>
                     </div>
                 </div>
-                <div class="archive-content">
-                    <p><%= blog.description %></p>
+                <div class="bottom-section">
+                    <div class="archive-content">
+                        <p><%= blog.description %></p>
+                    </div> 
+                    <div class="delete-container">
+                        <form action="/delete/<%= blog._id %>" method="POST" onClick="event.stopPropagation();">
+                            <button type="submit">delete</button>
+                        </form>
+                    </div>
                 </div>
+                
             </div>
         <% }) %>
         <% if(blogs.length === 0){ %>
