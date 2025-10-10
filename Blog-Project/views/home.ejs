@@ -40,7 +40,7 @@
         </div>
         <div class="recent-blog-container" id="recent-blogs-list">
             <% blogs.forEach(blog => { %>
-                <div class="recent-blog">
+                <div class="recent-blog" onclick="window.location.href='/post/<%= blog._id %>'">
                     <div class="recent-blog-title">
                         <h2><%= blog.title %></h2>
                     </div>

@@ -3,9 +3,16 @@
     padding: 0;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body{
     background-color: #040303;
-    min-height: 120vh;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 
@@ -19,7 +26,7 @@ body{
 .title-text{
     color: white;
     font-size: 180px;
-    font-family: IBM Plex Mono;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
     word-wrap: break-word;
 
@@ -76,7 +83,7 @@ body{
 .recent-blogs {
     background-color: #171414;
     margin-top: 2rem;
-    padding: 4rem 7rem 4rem 7rem;
+    padding: 4rem 7rem 8rem 7rem;
     display: flex;
     align-items: flex-start;
     gap: 6rem;
@@ -90,7 +97,7 @@ body{
 .recent-title p {
     color: white;
     font-size: 80px;
-    font-family: IBM Plex Mono;
+    font-family: 'IBM Plex Mono', monospace;    
     font-weight: 500;
     word-wrap: break-word;
     margin: 0;
@@ -103,7 +110,7 @@ body{
     flex-direction: column;
     gap: 2rem;
     padding-top: 1rem;
-}
+    }
 
 .recent-blog {
     border-bottom: 1px solid #222;
@@ -300,7 +307,7 @@ body{
     
     .recent-blogs {
         flex-direction: column;
-        padding: 4rem 2rem;
+        padding: 4rem 2rem 6rem 2rem;
         gap: 2rem;
     }
     
@@ -350,7 +357,7 @@ body{
     }
     
     .recent-blogs {
-        padding: 3rem 1rem;
+        padding: 3rem 1rem 5rem 1rem;
     }
     
     .recent-title p {

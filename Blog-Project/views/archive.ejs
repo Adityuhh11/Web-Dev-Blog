@@ -20,7 +20,7 @@
     <section class="archive-block">
 
         <% blogs.forEach(blog =>{ %>
-            <div class="archive">
+            <div class="archive" onclick="window.location.href='/post/<%= blog._id %>'">
                 <div class="archive-title">
                     <h2><%= blog.title %></h2>
                 </div>
