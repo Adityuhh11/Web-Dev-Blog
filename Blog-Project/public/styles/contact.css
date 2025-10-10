@@ -51,4 +51,54 @@ body{
 .contact-info a:hover {
     color: #ccc;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 100px;
+    }
+    
+    .Contact {
+        height: auto;
+        min-height: 60vh;
+        padding: 2rem 1rem;
+    }
+    
+    .contact-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-info {
+        font-size: 1.4rem;
+    }
+    
+    .contact-info a {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 80px;
+    }
+    
+    .Contact {
+        min-height: 50vh;
+        padding: 1.5rem 1rem;
+    }
+    
+    .contact-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-info {
+        font-size: 1.1rem;
+    }
+    
+    .contact-info a {
+        margin-bottom: 0.8rem;
+    }
+}
     

@@ -36,3 +36,41 @@ body{
     font-family: 'IBM Plex Mono', monospace;
 
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .About {
+        margin-top: 30px;
+        padding: 15px;
+        padding-bottom: 100px;
+    }
+    
+    .about-title h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .About {
+        margin-top: 20px;
+        padding: 10px;
+        padding-bottom: 80px;
+    }
+    
+    .about-title h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
