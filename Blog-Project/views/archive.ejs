@@ -21,8 +21,13 @@
 
         <% blogs.forEach(blog =>{ %>
             <div class="archive" onclick="window.location.href='/post/<%= blog._id %>'">
-                <div class="archive-title">
-                    <h2><%= blog.title %></h2>
+                <div class="header">
+                   <div class="archive-title">
+                        <h2><%= blog.title %></h2>
+                    </div> 
+                    <div class="archive-date">
+                        <p><%= blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : '' %></p>
+                    </div>
                 </div>
                 <div class="archive-content">
                     <p><%= blog.description %></p>

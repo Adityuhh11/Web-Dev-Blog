@@ -23,6 +23,11 @@ body{
     text-align: center;
     margin: 4rem 0 3rem 0;
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .archive-page-title h1 {
     color: white;
