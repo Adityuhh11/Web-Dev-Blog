@@ -13,62 +13,88 @@ body{
     margin:1.5rem;
 }
 
+/* Used the help of an LLM to help me with restructering and advice on font and structure and colors  */
 .Title{
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
 }
 .title-text{
     color: #FFFFFF;
-    /* font-family: 'Geist Mono', monospace; */
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 4.5rem;
-    margin-bottom: 10px;
-    margin-left: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 .info{
-    width: 600px;
-    color: #FFFFFF;
+    color: #888888;
     font-family: 'IBM Plex Mono', monospace;    
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     display: flex;
-    justify-content: space-between;
-    margin-left: 1rem;
-
+    gap: 1.5rem;
+    align-items: center;
 }
 .content {
-    margin-top: 3rem;
     max-width: 750px;
     width: 100%;
-    color: #FFFFFF;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
+    color: #E5E5E5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.05rem;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(23, 20, 20, 0.85);
-    border-radius: 12px;
-    padding: 2rem 2.5rem;
-    padding-bottom: 100px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    padding: 2.5rem 3rem;
+    padding-bottom: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    position: relative;
+}
+
+.content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .content p {
     margin-bottom: 1.5rem;
-    line-height: 1.7;
-    text-align: justify;
+    line-height: 1.8;
+    text-align: left;
+    font-weight: 400;
+    color: #D0D0D0;
 }
 
 @media (max-width: 768px) {
+    .Title {
+        padding: 0 1.5rem;
+    }
+
     .title-text {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
 
     .info {
-        width: 90%;
-        font-size: 1.2rem;
+        font-size: 0.85rem;
+        gap: 1rem;
     }
 
     .content {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+        padding-bottom: 100px;
         width: 90%;
+        font-size: 1rem;
     }
 }
 
@@ -86,23 +112,28 @@ body{
         margin: 1.5rem 0;
     }
 
+    .Title {
+        padding: 0 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
     .title-text {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-left: 0;
+        font-size: 1.75rem;
     }
 
     .info {
-        flex-direction: column;
-        align-items: center;
-        font-size: 1rem;
-        text-align: center;
+        flex-direction: row;
+        font-size: 0.8rem;
+        gap: 1rem;
     }
 
     .content {
-        padding: 1rem;
+        padding: 1.5rem 1.25rem;
+        padding-bottom: 100px;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+        font-size: 0.95rem;
     }
 }
