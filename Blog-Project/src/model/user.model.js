@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt"
 
 const userSchema = new mongoose.Schema({
-    name:{
+    username:{
         type:String,
         required:true
     },
@@ -21,9 +21,9 @@ const userSchema = new mongoose.Schema({
 
 })
 
-userSchema.pre("save",async function(next){
+userSchema.pre("save", async function(next){
     if(this.isModified("password")){
-        this.password = await bcrypt.hash(this.password,10)
+        this.password =  bcrypt.hash(this.password,10)
     }
     next()
 },{timestamps:true})
