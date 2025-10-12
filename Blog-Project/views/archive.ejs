@@ -33,11 +33,13 @@
                     <div class="archive-content">
                         <p><%= blog.description %></p>
                     </div> 
+                <% if(isLoggedIn){ %>
                     <div class="delete-container">
                         <form action="/delete/<%= blog._id %>" method="POST" onClick="event.stopPropagation();">
                             <button type="submit">delete</button>
                         </form>
                     </div>
+                <% } %>
                 </div>
                 
             </div>
