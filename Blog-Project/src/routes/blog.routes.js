@@ -8,7 +8,6 @@ import { recentBlogs,
 import path from "path";
 
 const router = Router();
-const __dirname = path.resolve();
 
 
 router.get("/", recentBlogs);
