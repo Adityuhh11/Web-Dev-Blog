@@ -25,4 +25,30 @@ const verifyJWT = asyncHandler(async (req, res, next) => {
         return res.redirect("/login");
     }
 });
-export default verifyJWT;
+
+
+const checkAuthStatus = (req, res, next) => {
+    try {
+        const token = req.cookies?.accessToken;
+        
+        if (!token) {
+            res.locals.isLoggedIn = false;
+            return next();
+        }
+
+        jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+            if (err) {
+                res.locals.isLoggedIn = false;
+            } else {
+                res.locals.isLoggedIn = true;
+                res.locals.user = user; 
+            }
+            next();
+        });
+    } catch (error) {
+        res.locals.isLoggedIn = false;
+        next();
+    }
+};
+
+export { verifyJWT, checkAuthStatus };
