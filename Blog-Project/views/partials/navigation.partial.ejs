@@ -1,13 +1,18 @@
-<link rel="stylesheet" href="/Blog-Project/public/styles/navigation.css">
-
-
+<link rel="stylesheet" href="/styles/navigation.css">
 
 <nav class="bottom-nav">
-        <div class="nav-links">
-            <a href="/" >home</a>
-            <a href="about" >about</a>
-            <a href="archive" >archive</a>
-            <a href="contact" >contact</a>
-            <a href="create" >create</a>
-        </div>
-    </nav>
+    <div class="nav-links">
+        <a href="/" >home</a>
+        <a href="/about" >about</a>
+        <a href="/archive" >archive</a>
+        <a href="/contact" >contact</a>
+        <% if (isLoggedIn) { %>
+            <a href="/create" >create</a>
+            <form action="/logout" method="POST" style="display: inline;">
+                <button type="submit" class="logout-btn">Logout</button>
+            </form>
+        <% } else { %>
+            <a href="/login" >login</a>
+        <% } %>
+    </div>
+</nav>
