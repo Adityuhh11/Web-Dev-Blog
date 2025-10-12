@@ -1,36 +1,42 @@
 import asyncHandler from "../utils/asynchandler.js";
-import {User} from "../models/user.model.js";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import {User} from "../model/user.model.js";
 
-// const generateAccessTokenandRefreshToken = (user) =>{
-//     const accessToken = user.generateAccessToken();
-//     const refreshToken = user.generateRefreshTokens();  
-//     return {accessToken,refreshToken};
-// }
-const loginUser =  asyncHandler(async(req,res)=>{
-    const {username,password} = req.body;
-    if(!username || !password){
-        res.status(400).render("login", { error: "Please provide all fields" });;
-        throw new Error("Please provide all the fields")
+const loginUser = asyncHandler(async (req, res) => {
+    try {
+        const { username, password } = req.body;
+
+        if (!username || !password) {
+            return res.render("login", { error: "Please provide all fields" });
+        }
+
+        const user = await User.findOne({ username });
+
+        if (!user) {
+            return res.render("login", { error: "Invalid credentials" });
+        }
+
+        const isPasswordCorrect = await user.comparePassword(password);
+
+        if (!isPasswordCorrect) {
+            return res.render("login", { error: "Invalid credentials" });
+        }
+
+        const accessToken = user.generateAccessToken();
+        const refreshToken = user.generateRefreshTokens();
+
+        const options = {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+        };
+
+        res.cookie("accessToken", accessToken, options);
+        res.cookie("refreshToken", refreshToken, options);
+
+        return res.redirect("/");
+    } catch (error) {
+        console.error("Login error:", error);
+        return res.render("login", { error: "An error occurred during login" });
     }
-    const user  = await User.findOne({username});
-    if(!user){
-        res.status(400).render("login", { error: "Invalid credentials" });
-        throw new Error("User not found")
-    }
-    const isPasswordcorrect = user.comparePassword(password)
-    if(!isPasswordcorrect){
-        res.status(400);
-        throw new Error("Invalid Credentials").render("login", { error: "Invalid credentials" });
-    }
-    const accessToken = user.generateAccessToken();
-    const refreshToken = user.generateRefreshTokens();  
-    const options = {
-        httpOnly:true,
-        secure: process.env.NODE_ENV === 'production'
-    }
-    res.cookie("refreshToken",refreshToken,options)
-    res.cookie("accessToken",accessToken,options)
-    res.status(200).redirect("/") 
-})
+});
+
+export {loginUser}

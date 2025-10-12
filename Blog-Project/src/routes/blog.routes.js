@@ -5,21 +5,18 @@ import { recentBlogs,
             uploadBlog,
             deleteBlog
         } from "../controllers/blog.controller.js";
-import path from "path";
-
+import {verifyJWT} from "../middleware/auth.middleware.js";
+import { checkAuthStatus } from "../middleware/auth.middleware.js";
 const router = Router();
-
+router.use(checkAuthStatus);
 
 router.get("/", recentBlogs);
 
-
-router.get("/create", (req, res) => {
+router.get("/create",verifyJWT, (req, res) => {
     res.render("createblog");
 });
-
-router.post("/createblog", uploadBlog);
-
-router.post("/delete/:id", deleteBlog);
+router.post("/createblog", verifyJWT,uploadBlog);
+router.post("/delete/:id",verifyJWT, deleteBlog);
 
 
 router.get("/post/:id", findBlog);
