@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create</title>
-    <link rel="stylesheet" href="/styles/createblog.css">
-</head>
+<%- include('partials/head.partials.ejs') %>
+<link rel="stylesheet" href="/styles/createblog.css">
 <body>
+    <button type="button" class="back-arrow" aria-label="Go back" onclick="window.history.back()">←</button>
     <section class = "create-blog-container">
         <form action="/createblog" method="POST">
             <div class="header">

@@ -11,7 +11,8 @@ const uploadBlog = asyncHandler(async(req,res)=>{
     const newBlog = await Blog.create({
         title:title,
         description:description,
-        content:content
+        content:content,
+        owner:req.user.id
     })
     res.redirect(`/post/${newBlog._id}`); 
     // res.status(200).json({message:"Blog created successfully", blog:newBlog})
