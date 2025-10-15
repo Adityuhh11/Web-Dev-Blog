@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.partials.ejs') %>
+<link rel="stylesheet" href="/styles/update.css">
+<body>
+<button type="button" class="back-arrow" aria-label="Go back" onclick="window.history.back()">←</button>
+
+<section class="update-container">
+
+<form action="/update/<%= blog._id %>" method="POST">
+    
+    <input type="hidden" name="blogId" value="<%= blog._id %>">
+    
+    <section class="form-group">
+        <label for="title-input">Title</label>
+        <input type="text" id="title-input" name="title" value="<%= blog.title %>">
+
+        <div class="info">
+            <div><p><%= blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : '' %></p></div>
+            <div><p><%= blog.owner ? blog.owner.name : 'Anonymous' %></p></div>
+        </div>
+    </section>
+    
+    <section class="form-group">
+        <label for="description-input">Description</label>
+        <textarea name="description" id="description-input" rows="4"><%= blog.description %></textarea>
+    </section>
+
+    <section class="form-group">
+        <label for="content-input">Content</label>
+        <textarea name="content" id="content-input" rows="10"><%= blog.content %></textarea>
+    </section>
+
+    <button type="submit">Update Blog</button>
+
+</form>
+</section>
+
+    
+
+    
+</body>
+</html>

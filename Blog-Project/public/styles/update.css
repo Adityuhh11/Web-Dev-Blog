@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+body{
+    background-color: #040303;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 120px;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.back-arrow{
+    top:75px;
+    position: absolute;
+    left: 110px;
+    z-index: 1000;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1.7px solid rgba(255, 255, 255, 0.11);
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 35px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.back-arrow:hover{
+    background-color: #171414;
+}
+.update-container {
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+     margin-top: -3rem; /* Move header and button higher */
+    margin-bottom: 4rem;
+}
+.header-title{
+    color: white;
+    font-size: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    word-wrap: break-word;
+    margin-left: -3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+button{
+    background-color: #B1B1B1;
+    color: black;
+    font-size: 25px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 800;
+    word-wrap: break-word;
+    margin-right: 2rem;
+    margin-top: 4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+.submit-button button:hover{
+    background-color: #ccc;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+.form-group label{
+    color: white;
+    font-size: 25px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+}
+.form-group input, .form-group textarea{
+    background-color: #171414;
+    color: white;
+    font-size: 18px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 50px;
+     resize: none;
+}
+.form-group input:focus, .form-group textarea:focus{
+    outline: none;
+    box-shadow: 0 0 5px #B1B1B1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .back-arrow{
+        top: 12px;
+        left: 12px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .create-blog-container {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+    
+    .header-title {
+        font-size: 32px;
+        margin-left: 0;
+        padding-top: 0.5rem;
+    }
+    
+    .submit-button button {
+        font-size: 20px;
+        margin-right: 0;
+        margin-top: 0;
+        padding: 0.5rem 1.5rem;
+    }
+    
+    .form-group {
+        margin: 1rem 0;
+    }
+    
+    .form-group label {
+        font-size: 20px;
+    }
+    
+    .form-group input, .form-group textarea {
+        font-size: 16px;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-arrow{
+        top: 10px;
+        left: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    body {
+        padding-bottom: 100px;
+    }
+    
+    .create-blog-container {
+        padding: 1.5rem 1rem;
+        margin-top: 1rem;
+    }
+    
+    .header {
+        margin-top: -1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .header-title {
+        font-size: 24px;
+    }
+    
+    .submit-button button {
+        font-size: 18px;
+        padding: 0.4rem 1.2rem;
+        width: 100%;
+    }
+    
+    .form-group {
+        margin: 0.8rem 0;
+    }
+    
+    .form-group label {
+        font-size: 18px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group input, .form-group textarea {
+        font-size: 14px;
+        padding: 0.8rem;
+        border-radius: 25px;
+    }
+}
