@@ -78,7 +78,7 @@ button{
     border: none;
     cursor: pointer;
 }
-.submit-button button:hover{
+.update-button button:hover{
     background-color: #ccc;
 }
 .form-group{
@@ -120,7 +120,7 @@ button{
         height: 40px;
         font-size: 20px;
     }
-    .create-blog-container {
+    .update-container {
         padding: 2rem 1.5rem;
         margin-top: 2rem;
     }
@@ -139,7 +139,7 @@ button{
         padding-top: 0.5rem;
     }
     
-    .submit-button button {
+    .update-button button {
         font-size: 20px;
         margin-right: 0;
         margin-top: 0;
@@ -172,7 +172,7 @@ button{
         padding-bottom: 100px;
     }
     
-    .create-blog-container {
+    .update-container {
         padding: 1.5rem 1rem;
         margin-top: 1rem;
     }
@@ -186,7 +186,7 @@ button{
         font-size: 24px;
     }
     
-    .submit-button button {
+    .update-button button {
         font-size: 18px;
         padding: 0.4rem 1.2rem;
         width: 100%;
