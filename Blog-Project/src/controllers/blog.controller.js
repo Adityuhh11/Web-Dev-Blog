@@ -15,7 +15,6 @@ const uploadBlog = asyncHandler(async(req,res)=>{
         owner:req.user.id
     })
     res.redirect(`/post/${newBlog._id}`); 
-    // res.status(200).json({message:"Blog created successfully", blog:newBlog})
 })
 const deleteBlog = asyncHandler(async (req, res) => {
     
@@ -47,7 +46,7 @@ const AllBlogs = asyncHandler(async(req, res) => {
     });
 });
 
-const findBlog = asyncHandler(async (req, res) => {
+const getBlog = asyncHandler(async (req, res) => {
     const blogId = req.params.id;
     const blogData = await Blog.findById(blogId).populate("owner", "name");
 
@@ -62,11 +61,41 @@ const findBlog = asyncHandler(async (req, res) => {
         }
     });
 });
+const findBlog = asyncHandler(async (req, res) => {
+    const blogId = req.params.id;
+    const blogData = await Blog.findById(blogId).populate("owner", "name");
+
+    if (!blogData) {
+        return res.status(404).render('404');
+    }
+
+    res.render("update", {
+        blog: {
+            ...blogData._doc,
+            date: blogData.createdAt.toLocaleDateString()
+        }
+    });
+});
+
+const updateBlog =  asyncHandler(async(req,res)=>{
+    const {title,description, content} = req.body
+    const blogId= req.params.id;
+    const blog = await Blog.findByIdAndUpdate(blogId,{
+        title:title,
+        description:description,
+        contenttnet:content
+    },
+    {new:true})
+    res.redirect(`/post/${blog._id}`);
+
+})
 
 export {
     recentBlogs,
     AllBlogs,
+    getBlog,
     findBlog,
     uploadBlog,
-    deleteBlog
+    deleteBlog,
+    updateBlog
 }
