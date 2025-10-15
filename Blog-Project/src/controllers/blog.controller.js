@@ -83,7 +83,7 @@ const updateBlog =  asyncHandler(async(req,res)=>{
     const blog = await Blog.findByIdAndUpdate(blogId,{
         title:title,
         description:description,
-        contenttnet:content
+        content:content
     },
     {new:true})
     res.redirect(`/post/${blog._id}`);

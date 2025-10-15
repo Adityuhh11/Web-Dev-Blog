@@ -16,8 +16,8 @@
         <input type="text" id="title-input" name="title" value="<%= blog.title %>">
 
         <div class="info">
-            <div><p><%= blog.createdAt ? new Date(blog.createdAt).toLocaleDateString() : '' %></p></div>
-            <div><p><%= blog.owner ? blog.owner.name : 'Anonymous' %></p></div>
+            <div><p><%= blog.date %></p></div>
+            <div><p><%= blog.owner.name %></p></div>
         </div>
     </section>
     
