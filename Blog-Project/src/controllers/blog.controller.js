@@ -48,7 +48,7 @@ const AllBlogs = asyncHandler(async(req, res) => {
 
 const getBlog = asyncHandler(async (req, res) => {
     const blogId = req.params.id;
-    const blogData = await Blog.findById(blogId).populate("owner", "name");
+    const blogData = await Blog.findById(blogId).populate("owner", "username");
 
     if (!blogData) {
         return res.status(404).render('404');
