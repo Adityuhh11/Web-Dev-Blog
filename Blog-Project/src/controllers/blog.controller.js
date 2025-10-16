@@ -16,6 +16,7 @@ const uploadBlog = asyncHandler(async(req,res)=>{
     })
     res.redirect(`/post/${newBlog._id}`); 
 })
+
 const deleteBlog = asyncHandler(async (req, res) => {
     
     const  blogId  = req.params.id;
@@ -32,6 +33,7 @@ const deleteBlog = asyncHandler(async (req, res) => {
 
     return res.redirect("/archive"); 
 });
+
 const recentBlogs = asyncHandler(async(req,res)=>{
     const blogs = await Blog.find().sort({ createdAt: -1 }).limit(5)
     res.render("home", { 
@@ -61,6 +63,7 @@ const getBlog = asyncHandler(async (req, res) => {
         }
     });
 });
+
 const findBlog = asyncHandler(async (req, res) => {
     const blogId = req.params.id;
     const blogData = await Blog.findById(blogId).populate("owner", "name");

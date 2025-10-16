@@ -24,7 +24,6 @@ import { checkAuthStatus } from "./src/middleware/auth.middleware.js";
 app.use(checkAuthStatus);
 
 // BLOG ROUTES
-
 import blogRouter from "./src/routes/blog.routes.js"
 app.use("/", blogRouter);
 // USER ROUTES
