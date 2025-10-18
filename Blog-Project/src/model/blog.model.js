@@ -14,11 +14,7 @@ const blogSchema =  new mongoose.Schema({
         type:String,
         required:true,
         index: true 
-    },
-    // category:{
-    //     type:String,
-    //     required:true,
-    // },
+    }, 
     owner:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"User"
@@ -29,3 +25,7 @@ blogSchema.index({ title: "text", description: "text" });
 
 
 export const Blog = mongoose.model("Blog", blogSchema)
+// category:{
+    //     type:String,
+    //     required:true,
+    // },
