@@ -14,6 +14,10 @@ const uploadBlog = asyncHandler(async(req,res)=>{
         content:content,
         owner:req.user.id
     })
+
+    if (req.headers['x-master-key']) {
+        return res.status(201).json({ success: true, blogId: newBlog._id });
+    }
     res.redirect(`/post/${newBlog._id}`); 
 })
 
