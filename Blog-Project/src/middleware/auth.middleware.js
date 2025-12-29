@@ -4,6 +4,14 @@ import asyncHandler from "../utils/asynchandler.js";
 
 const verifyJWT = asyncHandler(async (req, res, next) => {
     try {
+        // 1. Check for Master API Key (for n8n)
+        const masterApiKey = req.headers['x-master-key'];
+        if (masterApiKey && masterApiKey === process.env.MASTER_API_KEY) {
+            // Fetch your admin user manually so req.user exists for the controller
+            const admin = await User.findOne({ username: "Aditya Sai Prem" }); // or use your specific admin username
+            req.user = admin;
+            return next();
+        }
         const token = req.cookies?.accessToken;
 
         if (!token) {
