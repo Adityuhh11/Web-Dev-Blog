@@ -29,6 +29,9 @@ app.use("/", blogRouter);
 // USER ROUTES
 import userRouter from "./src/routes/user.routes.js"
 app.use("/", userRouter);
+// SUBSCRIBER ROUTES
+import subscriberRouter from "./src/routes/subscriber.routes.js"
+app.use("/", subscriberRouter);
 
 export default app;
 
