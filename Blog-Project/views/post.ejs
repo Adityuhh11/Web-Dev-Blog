@@ -24,6 +24,18 @@
         </div>
     </section>
     
+    <!-- Newsletter Subscription Section -->
+    <div style="max-width: 750px; margin: 4rem auto; padding: 2.5rem 3rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; text-align: center;">
+        <h2 style="color: white; font-family: 'IBM Plex Mono', monospace; font-size: 1.6rem; margin-bottom: 0.5rem;">Subscribe for more posts like this</h2>
+        <p style="color: #888; font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 2rem;">Get notified directly in your inbox whenever a new blog is posted.</p>
+        
+        <form id="newsletter-form" style="display: flex; gap: 1rem; justify-content: center; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+            <input type="email" id="subscriber-email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid #333; background: #111; color: white; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none;">
+            <button type="submit" style="padding: 1rem 2rem; border-radius: 8px; border: none; background: white; color: #040303; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 1rem; cursor: pointer;">Subscribe</button>
+        </form>
+        <p id="newsletter-message" style="margin-top: 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; min-height: 20px;"></p>
+    </div>
+    
     <!-- Bottom Navigation -->
         <%- include('partials/navigation.partial.ejs') %>
     
