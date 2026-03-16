@@ -6,3 +6,5 @@ Refresh_Token_Expiry=random time
 JWT_SECRET=long string
 ACCESS_TOKEN_SECRET=long string
 ACCESS_TOKEN_EXPIRY=random time
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
