@@ -207,3 +207,96 @@ body{
         border-radius: 25px;
     }
 }
+
+/* Quill Editor Dark Theme Overrides */
+#editor-container {
+    height: 300px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.ql-toolbar.ql-snow {
+    background-color: #1a1717; 
+    border: none !important;
+    border-bottom: 2px solid #222 !important;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 0.8rem 1.5rem !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+    display: flex;
+    align-items: center;
+    margin-right: 0 !important;
+}
+
+.ql-container.ql-snow {
+    background-color: #171414;
+    color: white;
+    font-size: 18px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    border: none !important;
+}
+
+.ql-editor {
+    padding: 1.2rem 1.5rem;
+}
+
+/* Scrollbar styling for Quill editor */
+.ql-editor::-webkit-scrollbar {
+    width: 8px;
+}
+.ql-editor::-webkit-scrollbar-track {
+    background: transparent;
+}
+.ql-editor::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.ql-editor.ql-blank::before {
+    color: #888;
+    font-style: italic;
+    left: 1.5rem;
+}
+
+/* Toolbar Icon Colors */
+.ql-snow .ql-stroke {
+    stroke: #ffffff !important;
+}
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill {
+    fill: #ffffff !important;
+}
+.ql-snow .ql-picker {
+    color: #ffffff !important;
+}
+.ql-snow .ql-picker-options {
+    background-color: #1a1717 !important;
+    border-color: #333 !important;
+}
+/* Ensure the active/hover states of picker items are visible */
+.ql-snow .ql-picker-item:hover, .ql-snow .ql-picker-item.ql-selected {
+    color: #b1b1b1 !important;
+}
+.ql-snow .ql-picker-item:hover .ql-stroke, .ql-snow .ql-picker-item.ql-selected .ql-stroke {
+    stroke: #b1b1b1 !important;
+}
+.ql-snow .ql-picker-item:hover .ql-fill, .ql-snow .ql-picker-item.ql-selected .ql-fill {
+    fill: #b1b1b1 !important;
+}
+/* Toolbar button hover/active states */
+.ql-snow .ql-toolbar button:hover, .ql-snow .ql-toolbar button:focus, .ql-snow .ql-toolbar button.ql-active {
+    color: #b1b1b1 !important;
+}
+.ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button:focus .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke {
+    stroke: #b1b1b1 !important;
+}
+.ql-snow .ql-toolbar button:hover .ql-fill, .ql-snow .ql-toolbar button:focus .ql-fill, .ql-snow .ql-toolbar button.ql-active .ql-fill {
+    fill: #b1b1b1 !important;
+}
