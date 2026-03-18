@@ -20,19 +20,19 @@
 
     <!-- Recent Blogs Section -->
     <section class="recent-blogs">
-        <div class="recent-title" style="flex-shrink: 0; min-width: 400px; max-width: 500px; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+        <div class="recent-title">
             <p>Recent blogs</p>
             
             <!-- Newsletter Subscription Section -->
-            <div style="margin-top: 10rem; padding: 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); backdrop-filter: blur(10px);">
-                <h2 style="color: white; font-family: 'IBM Plex Mono', monospace; font-size: 1.2rem; margin-bottom: 0.5rem;">Subscribe to our newsletter</h2>
-                <p style="color: #888; font-family: 'Inter', sans-serif; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">Get notified whenever a new blog is posted.</p>
+            <div class="newsletter-sidebar">
+                <h2>Subscribe to our newsletter</h2>
+                <p class="newsletter-sub">Get notified whenever a new blog is posted.</p>
                 
-                <form id="newsletter-form" style="display: flex; flex-direction: column; gap: 0.8rem;">
-                    <input type="email" id="subscriber-email" placeholder="Enter your email address" required style="padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid #333; background: #111; color: white; font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s ease;">
-                    <button type="submit" style="padding: 0.8rem 1rem; border-radius: 8px; border: none; background: white; color: #040303; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease;">Subscribe</button>
+                <form id="newsletter-form" class="newsletter-sidebar-form">
+                    <input type="email" id="subscriber-email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
                 </form>
-                <p id="newsletter-message" style="margin-top: 1rem; font-family: 'Inter', sans-serif; font-size: 0.85rem; min-height: 20px;"></p>
+                <p id="newsletter-message" class="newsletter-message"></p>
             </div>
         </div>
         <div class="recent-blog-container" id="recent-blogs-list">

@@ -1,6 +1,13 @@
 <link rel="stylesheet" href="/styles/navigation.css">
 
-<nav class="bottom-nav">
+<!-- Hamburger Button (Mobile Only) -->
+<div class="mobile-menu-btn" id="mobile-menu-btn">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+</div>
+
+<nav class="bottom-nav" id="bottom-nav">
     <div class="nav-links">
         <a href="/" >home</a>
         <a href="/about" >about</a>
@@ -15,3 +22,26 @@
         <% } %>
     </div>
 </nav>
+
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.getElementById('bottom-nav').classList.toggle('active');
+        // Prevent scrolling on body when menu is open
+        if (this.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Close menu when clicking a link
+    const navLinks = document.querySelectorAll('.bottom-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobile-menu-btn').classList.remove('active');
+            document.getElementById('bottom-nav').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+</script>

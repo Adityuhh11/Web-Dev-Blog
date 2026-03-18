@@ -105,6 +105,79 @@ body {
 .recent-title {
     flex-shrink: 0;
     margin-top: 0;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-sidebar {
+    margin-top: 8rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-sidebar h2 {
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-sidebar .newsletter-sub {
+    color: #888;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-sidebar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.newsletter-sidebar-form input {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.newsletter-sidebar-form input:focus {
+    border-color: #ccc;
+}
+
+.newsletter-sidebar-form button {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: #040303;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.newsletter-sidebar-form button:hover {
+    background: #ccc;
+    transform: translateY(-2px);
 }
 
 .recent-title p {
@@ -294,6 +367,10 @@ body {
     .recent-title p {
         font-size: 60px;
     }
+    
+    .recent-title {
+        max-width: 350px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -329,6 +406,12 @@ body {
     .recent-title {
         margin-top: 0;
         text-align: center;
+        max-width: 100%;
+    }
+
+    .newsletter-sidebar {
+        margin-top: 4rem;
+        text-align: left;
     }
 
     .recent-title p {
@@ -356,7 +439,7 @@ body {
     }
 
     .title-text {
-        font-size: 60px;
+        font-size: 48px;
         line-height: 1.1;
     }
 
@@ -372,21 +455,21 @@ body {
     }
 
     .recent-blogs {
-        padding: 3rem 1rem 5rem 1rem;
+        padding: 2rem 1rem 4rem 1rem;
     }
 
     .recent-title p {
-        font-size: 40px;
+        font-size: 32px;
         line-height: 1.1;
     }
 
     .recent-blog-title h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .recent-blog-content p {
-        font-size: 0.9rem;
-        line-height: 1.4;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 }
 
@@ -497,5 +580,14 @@ body {
 @media (max-width: 480px) {
     .newsletter-section {
         padding: 2rem 1rem;
+    }
+
+    .newsletter-container {
+        padding: 2rem 1rem;
+    }
+
+    .newsletter-form input, .newsletter-form button {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
