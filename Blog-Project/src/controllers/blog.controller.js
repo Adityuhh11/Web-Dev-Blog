@@ -16,27 +16,26 @@ const uploadBlog = asyncHandler(async(req,res)=>{
         content:content,
         owner:req.user.id
     })
-
-    try {
-        const subscribers = await Subscriber.find({});
+    // Send emails asynchronously without blocking the response
+    Subscriber.find({}).then(subscribers => {
         if (subscribers.length > 0) {
             const blogUrl = `${req.protocol}://${req.get("host")}/post/${newBlog._id}`;
             const subject = `New Blog Post: ${title}`;
             const message = `Check out the new blog post: ${title}\n\n${description}\n\nRead more here: ${blogUrl}`;
             const htmlMessage = `<p>Check out the new blog post: <strong>${title}</strong></p><p>${description}</p><a href="${blogUrl}">Read more here</a>`;
             
-            for (const sub of subscribers) {
-                await sendEmail({
+            subscribers.forEach(sub => {
+                sendEmail({
                     email: sub.email,
                     subject: subject,
                     message: message,
                     htmlMessage: htmlMessage
-                });
-            }
+                }).catch(err => console.error("Email send error for", sub.email, err));
+            });
         }
-    } catch (error) {
-        console.error("Failed to send notification emails:", error);
-    }
+    }).catch(error => {
+        console.error("Failed to fetch subscribers for email notification:", error);
+    });
 
     if (req.headers['x-master-key']) {
         return res.status(201).json({ success: true, blogId: newBlog._id });
