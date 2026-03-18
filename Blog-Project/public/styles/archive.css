@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -8,7 +8,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-body{
+body {
     background-color: #040303;
     min-height: 100vh;
     font-family: 'IBM Plex Mono', monospace;
@@ -23,7 +23,8 @@ body{
     text-align: center;
     margin: 4rem 0 3rem 0;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +45,33 @@ body{
     font-weight: 300;
 }
 
-.archive-block{
+.create-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 34px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+
+.create-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+    animation: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.archive-block {
     max-width: 1200px;
     align-items: center;
     display: flex;
@@ -61,7 +88,7 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.archive{
+.archive {
     width: 100%;
     max-width: 800px;
     display: flex;
@@ -81,7 +108,7 @@ body{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.archive-title{
+.archive-title {
     margin-bottom: 1rem;
 }
 
@@ -101,46 +128,52 @@ body{
     line-height: 1.6;
     margin: 0;
 }
-.bottom-section{
+
+.bottom-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
 }
-.buttons{
+
+.buttons {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.delete-container button{
-    color:#ccc ;
+
+.delete-container button {
+    color: #ccc;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1rem;
     cursor: pointer;
-    background:none;
-    border:none;
-    padding:0;
-    cursor:pointer;
-    font:inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
 }
-.delete-container button:hover{
+
+.delete-container button:hover {
     color: #ff4d4d;
     text-decoration: underline;
     transition: all 0.3s ease;
 }
-.update-container button{
-    color:#ccc ;
+
+.update-container button {
+    color: #ccc;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 1rem;
     cursor: pointer;
-    background:none;
-    border:none;
-    padding:0;
-    cursor:pointer;
-    font:inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
 }
-.update-container button:hover{
+
+.update-container button:hover {
     color: #4db2ff;
     text-decoration: underline;
     transition: all 0.3s ease;
@@ -151,26 +184,26 @@ body{
     .archive-page-title h1 {
         font-size: 3rem;
     }
-    
+
     .archive-page-title p {
         font-size: 1rem;
     }
-    
+
     .archive-block {
         max-width: 90%;
         padding: 2rem;
         margin: 1rem auto 3rem auto;
     }
-    
+
     .archive {
         padding: 1.5rem;
         margin: 1.5rem 0;
     }
-    
+
     .archive-title h2 {
         font-size: 1.5rem;
     }
-    
+
     .archive-content p {
         font-size: 0.9rem;
     }
@@ -180,11 +213,11 @@ body{
     .archive-page-title {
         margin: 2rem 0;
     }
-    
+
     .archive-page-title h1 {
         font-size: 2.5rem;
     }
-    
+
     .archive-block {
         padding: 1.5rem;
         margin: 1rem auto 2rem auto;
@@ -194,7 +227,7 @@ body{
         padding: 1rem;
         margin: 1rem 0;
     }
-    
+
     .archive-title h2 {
         font-size: 1.3rem;
     }

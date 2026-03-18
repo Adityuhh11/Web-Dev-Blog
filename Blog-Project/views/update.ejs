@@ -3,9 +3,8 @@
 <%- include('partials/head.partials.ejs') %>
 <link rel="stylesheet" href="/styles/update.css">
 <body>
-<button type="button" class="back-arrow" aria-label="Go back" onclick="window.history.back()">←</button>
-
 <section class="update-container">
+<button type="button" class="back-arrow" aria-label="Go back" onclick="window.history.back()">←</button>
 
 <form action="/update/<%= blog._id %>" method="POST">
     
@@ -66,7 +65,9 @@
         };
     </script>
 
-    <button type="submit">Update Blog</button>
+    <div class="submit-section" style="margin-top: 2rem; display: flex; justify-content: flex-end; padding: 0 2rem;">
+        <button type="submit" class="primary-btn">Update Blog</button>
+    </div>
 
 </form>
 </section>

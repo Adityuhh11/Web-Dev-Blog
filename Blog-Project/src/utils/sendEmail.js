@@ -1,11 +1,14 @@
 import { Resend } from 'resend';
 
-// Initialize with the API key from environment variables
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resendInstance = null;
 
 const sendEmail = async (options) => {
+    if (!resendInstance) {
+        resendInstance = new Resend(process.env.RESEND_API_KEY);
+    }
+
     try {
-        const { data, error } = await resend.emails.send({
+        const { data, error } = await resendInstance.emails.send({
             from: process.env.EMAIL_FROM || 'Acme <onboarding@resend.dev>',
             to: options.email,
             subject: options.subject,
