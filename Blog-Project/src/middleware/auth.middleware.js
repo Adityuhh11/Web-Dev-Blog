@@ -6,6 +6,9 @@ const verifyJWT = asyncHandler(async (req, res, next) => {
     try {
         // 1. Check for Master API Key (for n8n)
         const masterApiKey = req.headers['x-master-key'];
+        console.log("Header received:", masterApiKey); // DEBUG 1
+        console.log("Env Key exists:", !!process.env.MASTER_API_KEY);
+        
         if (masterApiKey && masterApiKey === process.env.MASTER_API_KEY) {
             // Fetch your admin user manually so req.user exists for the controller
             const admin = await User.findOne({ username: "Aditya" }); // or use your specific admin username
