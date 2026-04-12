@@ -13,17 +13,20 @@ const router = Router();
 router.use(checkAuthStatus);
 
 
+import { getAboutPage, getEditAboutPage, updateAboutPage } from "../controllers/page.controller.js";
+
 //Get routes
 router.get("/", recentBlogs);
 router.get("/create",verifyJWT, (req, res) => {
     res.render("createblog",{ user: req.user });
 });
-router.get("/update/:id",verifyJWT, findBlog)
+router.get("/update/:id",verifyJWT, findBlog);
 router.get("/post/:id", getBlog);
 router.get("/archive", AllBlogs);
-router.get("/about",(req,res)=>{
-    res.render("about")
-})
+
+router.get("/about", getAboutPage);
+router.get("/edit-about", verifyJWT, getEditAboutPage);
+router.post("/edit-about", verifyJWT, updateAboutPage);
 router.get("/contact",  (req,res)=>{
     res.render("contact")
 })
