@@ -99,7 +99,7 @@ body {
     padding: 6rem 8rem 8rem 8rem;
     display: flex;
     align-items: flex-start;
-    gap: 12rem;
+    gap: 4rem;
 }
 
 .recent-title {
@@ -109,6 +109,7 @@ body {
     max-width: 400px;
     display: flex;
     flex-direction: column;
+    margin-left: -2rem;
 }
 
 .newsletter-sidebar {
@@ -182,7 +183,7 @@ body {
 
 .recent-title p {
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     font-family: 'IBM Plex Mono', monospace;    
     font-weight: 500;
     white-space: nowrap;
@@ -196,7 +197,9 @@ body {
     flex-direction: column;
     gap: 2rem;
     padding-top: 1rem;
-    }
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 5rem;
+}
 
 .recent-blog {
     border-bottom: 1px solid #222;
@@ -407,6 +410,7 @@ body {
         margin-top: 0;
         text-align: center;
         max-width: 100%;
+        margin-left: 0;
     }
 
     .newsletter-sidebar {
@@ -420,6 +424,8 @@ body {
 
     .recent-blog-container {
         padding-top: 1rem;
+        padding-left: 0;
+        border-left: none;
     }
 
     .recent-blog-title h2 {
