@@ -53,11 +53,14 @@
         });
 
         var form = document.querySelector('form');
+        var isDraft = <%= blog.status === 'draft' ? 'true' : 'false' %>;
+
         form.onsubmit = function(e) {
             var contentInput = document.querySelector('#content-input');
             contentInput.value = quill.root.innerHTML;
-            
-            if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
+
+            var isPublishing = !isDraft || (document.activeElement?.name === 'status' && document.activeElement?.value === 'published');
+            if (isPublishing && quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
                 e.preventDefault();
                 alert("Blog content cannot be empty.");
                 return false;
@@ -65,9 +68,16 @@
         };
     </script>
 
-    <div class="submit-section" style="margin-top: 2rem; display: flex; justify-content: flex-end; padding: 0 2rem;">
-        <button type="submit" class="primary-btn">Update Blog</button>
-    </div>
+    <% if (blog.status === 'draft') { %>
+        <div class="submit-section">
+            <button type="submit" name="status" value="draft" class="secondary-btn">Save Draft</button>
+            <button type="submit" name="status" value="published" class="primary-btn">Publish</button>
+        </div>
+    <% } else { %>
+        <div class="submit-section">
+            <button type="submit" class="primary-btn">Update Blog</button>
+        </div>
+    <% } %>
 
 </form>
 </section>

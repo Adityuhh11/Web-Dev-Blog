@@ -3,21 +3,26 @@ import mongoose from "mongoose";
 const blogSchema =  new mongoose.Schema({
     title:{
         type:String,
-        required:true,
         index: true 
     },
     content:{
         type:String,
-        required:true
+        default: ""
     },
     description:{
         type:String,
-        required:true,
-        index: true 
+        index: true,
+        default: ""
     }, 
     owner:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"User"
+    },
+    status: {
+        type: String,
+        enum: ["draft", "published"],
+        default: "published",
+        index: true
     }
 },{timestamps:true});
 

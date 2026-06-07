@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.partials.ejs') %>
+<link rel="stylesheet" href="/styles/drafts.css">
+
+<body>
+    <section class="drafts-page-title">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+            <h1>Drafts</h1>
+            <a href="/create" class="create-btn" title="Create a new blog">+</a>
+        </div>
+        <p>Posts you've saved to finish later</p>
+    </section>
+
+    <section class="drafts-block">
+        <% drafts.forEach(draft => { %>
+            <div class="draft-card">
+                <div class="header">
+                    <div class="draft-title">
+                        <h2><%= draft.title %></h2>
+                    </div>
+                    <div class="draft-date">
+                        <p><%= draft.updatedAt ? new Date(draft.updatedAt).toLocaleDateString() : '' %></p>
+                    </div>
+                </div>
+                <div class="bottom-section">
+                    <div class="draft-content">
+                        <p><%= draft.description || 'No description yet' %></p>
+                    </div>
+                    <div class="buttons">
+                        <div class="delete-container">
+                            <form action="/delete/<%= draft._id %>" method="POST">
+                                <button type="submit">delete</button>
+                            </form>
+                        </div>
+                        <div class="update-container">
+                            <form action="/update/<%= draft._id %>" method="GET">
+                                <button type="submit">edit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        <% if (drafts.length === 0) { %>
+            <div class="no-drafts-message">
+                <p>No drafts yet. Start writing and save when you're ready.</p>
+                <a href="/create" class="create-link">Create a blog</a>
+            </div>
+        <% } %>
+    </section>
+
+    <%- include('partials/navigation.partial.ejs') %>
+</body>
+</html>

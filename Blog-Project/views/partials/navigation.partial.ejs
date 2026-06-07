@@ -12,6 +12,9 @@
         <a href="/" >home</a>
         <a href="/about" >about</a>
         <a href="/archive" >archive</a>
+        <% if (isLoggedIn) { %>
+            <a href="/drafts" >drafts</a>
+        <% } %>
         <a href="/contact" >contact</a>
         <% if (isLoggedIn) { %>
             <form action="/logout" method="POST" style="display: inline;">

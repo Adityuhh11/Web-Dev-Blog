@@ -5,7 +5,8 @@ import { recentBlogs,
             uploadBlog,
             deleteBlog,
             updateBlog,
-            findBlog
+            findBlog,
+            listDrafts
         } from "../controllers/blog.controller.js";
 import {verifyJWT} from "../middleware/auth.middleware.js";
 import { checkAuthStatus } from "../middleware/auth.middleware.js";
@@ -23,6 +24,7 @@ router.get("/create",verifyJWT, (req, res) => {
 router.get("/update/:id",verifyJWT, findBlog);
 router.get("/post/:id", getBlog);
 router.get("/archive", AllBlogs);
+router.get("/drafts", verifyJWT, listDrafts);
 
 router.get("/about", getAboutPage);
 router.get("/edit-about", verifyJWT, getEditAboutPage);
