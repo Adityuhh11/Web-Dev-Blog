@@ -53,21 +53,47 @@
         });
 
         var form = document.querySelector('form');
+        var statusInput = document.querySelector('#status-input');
+        var isDraft = <%= blog.status === 'draft' ? 'true' : 'false' %>;
+
+        if (isDraft) {
+            var publishBtn = document.querySelector('#publish-btn');
+            var draftBtn = document.querySelector('#draft-btn');
+
+            draftBtn.addEventListener('click', function() {
+                statusInput.value = 'draft';
+            });
+
+            publishBtn.addEventListener('click', function() {
+                statusInput.value = 'published';
+            });
+        }
+
         form.onsubmit = function(e) {
             var contentInput = document.querySelector('#content-input');
             contentInput.value = quill.root.innerHTML;
-            
-            if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
-                e.preventDefault();
-                alert("Blog content cannot be empty.");
-                return false;
+
+            if (!isDraft || statusInput.value === 'published') {
+                if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
+                    e.preventDefault();
+                    alert("Blog content cannot be empty.");
+                    return false;
+                }
             }
         };
     </script>
 
-    <div class="submit-section" style="margin-top: 2rem; display: flex; justify-content: flex-end; padding: 0 2rem;">
-        <button type="submit" class="primary-btn">Update Blog</button>
-    </div>
+    <% if (blog.status === 'draft') { %>
+        <input type="hidden" name="status" id="status-input" value="draft">
+        <div class="submit-section">
+            <button type="submit" id="draft-btn" class="secondary-btn">Save Draft</button>
+            <button type="submit" id="publish-btn" class="primary-btn">Publish</button>
+        </div>
+    <% } else { %>
+        <div class="submit-section">
+            <button type="submit" class="primary-btn">Update Blog</button>
+        </div>
+    <% } %>
 
 </form>
 </section>

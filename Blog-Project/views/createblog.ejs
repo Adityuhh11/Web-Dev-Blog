@@ -14,12 +14,12 @@
 
             <div class="form-group">
                 <label for="title-input">title</label>
-                <input id="title-input" type="text" name="title" required>
+                <input id="title-input" type="text" name="title">
             </div>
             
             <div class="form-group">
                 <label for="desc-input">description</label>
-                <textarea id="desc-input" name="description" rows="4" required></textarea>
+                <textarea id="desc-input" name="description" rows="4"></textarea>
             </div>
 
             <div class="form-group">
@@ -50,21 +50,37 @@
         });
 
                 var form = document.querySelector('form');
+                var statusInput = document.querySelector('#status-input');
+                var publishBtn = document.querySelector('#publish-btn');
+                var draftBtn = document.querySelector('#draft-btn');
+
+                draftBtn.addEventListener('click', function() {
+                    statusInput.value = 'draft';
+                });
+
+                publishBtn.addEventListener('click', function() {
+                    statusInput.value = 'published';
+                });
+
                 form.onsubmit = function(e) {
                     var contentInput = document.querySelector('#content-input');
                     contentInput.value = quill.root.innerHTML;
-                    
-                    if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
-                        e.preventDefault();
-                        alert("Blog content cannot be empty.");
-                        return false;
+
+                    if (statusInput.value === 'published') {
+                        if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
+                            e.preventDefault();
+                            alert("Blog content cannot be empty.");
+                            return false;
+                        }
                     }
                 };
             </script>
             <input type="hidden" name="ownerId" value="<%= user._id %>" hidden>
+            <input type="hidden" name="status" id="status-input" value="published">
             
-            <div class="submit-section" style="margin-top: 2rem; display: flex; justify-content: flex-end; padding: 0 2rem;">
-                <button type="submit" class="primary-btn">Create Blog</button>
+            <div class="submit-section">
+                <button type="submit" id="draft-btn" class="secondary-btn">Save as Draft</button>
+                <button type="submit" id="publish-btn" class="primary-btn">Publish</button>
             </div>
         </form>
     </section>
