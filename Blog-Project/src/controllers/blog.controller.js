@@ -22,9 +22,14 @@ const normalizeDraftFields = ({ title, description, content }) => ({
     content: content?.trim() || ""
 });
 
+const getIdString = (value) => {
+    if (!value) return null;
+    return (value._id ?? value).toString();
+};
+
 const isOwnerOrMasterKey = (blog, req) => {
-    if (req.headers["x-master-key"]) return true;
-    return blog.owner?.toString() === req.user?.id?.toString();
+    if (req.headers["x-master-key"] === process.env.MASTER_API_KEY) return true;
+    return getIdString(blog.owner) === getIdString(req.user);
 };
 
 const notifySubscribers = (blog, req) => {

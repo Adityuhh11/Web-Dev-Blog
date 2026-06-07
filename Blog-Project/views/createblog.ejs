@@ -50,37 +50,23 @@
         });
 
                 var form = document.querySelector('form');
-                var statusInput = document.querySelector('#status-input');
-                var publishBtn = document.querySelector('#publish-btn');
-                var draftBtn = document.querySelector('#draft-btn');
-
-                draftBtn.addEventListener('click', function() {
-                    statusInput.value = 'draft';
-                });
-
-                publishBtn.addEventListener('click', function() {
-                    statusInput.value = 'published';
-                });
-
                 form.onsubmit = function(e) {
                     var contentInput = document.querySelector('#content-input');
                     contentInput.value = quill.root.innerHTML;
 
-                    if (statusInput.value === 'published') {
-                        if (quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
-                            e.preventDefault();
-                            alert("Blog content cannot be empty.");
-                            return false;
-                        }
+                    var isPublishing = document.activeElement?.name === 'status' && document.activeElement?.value === 'published';
+                    if (isPublishing && quill.getText().trim().length === 0 && !quill.root.innerHTML.includes('<img')) {
+                        e.preventDefault();
+                        alert("Blog content cannot be empty.");
+                        return false;
                     }
                 };
             </script>
             <input type="hidden" name="ownerId" value="<%= user._id %>" hidden>
-            <input type="hidden" name="status" id="status-input" value="published">
             
             <div class="submit-section">
-                <button type="submit" id="draft-btn" class="secondary-btn">Save as Draft</button>
-                <button type="submit" id="publish-btn" class="primary-btn">Publish</button>
+                <button type="submit" name="status" value="draft" class="secondary-btn">Save as Draft</button>
+                <button type="submit" name="status" value="published" class="primary-btn">Publish</button>
             </div>
         </form>
     </section>
