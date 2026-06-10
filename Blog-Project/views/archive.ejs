@@ -2,6 +2,7 @@
 <html lang="en">
 <%- include('partials/head.partials.ejs') %>
  <link rel="stylesheet" href="../styles/archive.css">
+ <link rel="stylesheet" href="/styles/delete-modal.css">
 
 <body>
     <!-- Archive Page Title -->
@@ -34,8 +35,8 @@
                     <div class = "buttons">
                         <% if(isLoggedIn){ %>
                         <div class="delete-container">
-                            <form action="/delete/<%= blog._id %>" method="POST" onClick="event.stopPropagation();">
-                                <button type="submit">delete</button>
+                            <form action="/delete/<%= blog._id %>" method="POST" class="delete-form" onClick="event.stopPropagation();">
+                                <button type="button" class="delete-trigger" data-blog-title="<%= blog.title %>" data-fallback="this blog">delete</button>
                             </form>
                         </div>
                         <div class="update-container">
@@ -61,9 +62,11 @@
     
 
     
+    <%- include('partials/delete-modal.partial.ejs') %>
+
     <!-- Bottom Navigation -->
      <%- include('partials/navigation.partial.ejs') %>
-    
-    
+
+    <script src="/js/delete-confirmation.js"></script>
 </body>
 </html>
