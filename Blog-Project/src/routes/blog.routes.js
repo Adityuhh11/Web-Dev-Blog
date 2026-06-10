@@ -10,6 +10,7 @@ import { recentBlogs,
         } from "../controllers/blog.controller.js";
 import {verifyJWT} from "../middleware/auth.middleware.js";
 import { checkAuthStatus } from "../middleware/auth.middleware.js";
+import { csrfProtection } from "../middleware/csrf.middleware.js";
 const router = Router();
 router.use(checkAuthStatus);
 
@@ -28,14 +29,14 @@ router.get("/drafts", verifyJWT, listDrafts);
 
 router.get("/about", getAboutPage);
 router.get("/edit-about", verifyJWT, getEditAboutPage);
-router.post("/edit-about", verifyJWT, updateAboutPage);
+router.post("/edit-about", verifyJWT, csrfProtection, updateAboutPage);
 router.get("/contact",  (req,res)=>{
     res.render("contact")
 })
 
 //Post routes
-router.post("/update/:id",verifyJWT,updateBlog)
-router.post("/createblog", verifyJWT,uploadBlog);
-router.post("/delete/:id",verifyJWT, deleteBlog);
+router.post("/update/:id", verifyJWT, csrfProtection, updateBlog);
+router.post("/createblog", verifyJWT, csrfProtection, uploadBlog);
+router.post("/delete/:id", verifyJWT, csrfProtection, deleteBlog);
 
 export default router;
