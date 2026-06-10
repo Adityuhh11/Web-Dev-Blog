@@ -36,6 +36,7 @@
                         <% if(isLoggedIn){ %>
                         <div class="delete-container">
                             <form action="/delete/<%= blog._id %>" method="POST" class="delete-form" onClick="event.stopPropagation();">
+                                <%- include('partials/csrf-field.partial.ejs') %>
                                 <button type="button" class="delete-trigger" data-blog-title="<%= blog.title %>" data-fallback="this blog">delete</button>
                             </form>
                         </div>
