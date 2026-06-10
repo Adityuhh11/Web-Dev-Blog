@@ -1,6 +1,6 @@
 import { Router } from "express";
-import {verifyJWT} from "../middleware/auth.middleware.js";
 import { loginUser } from "../controllers/user.controller.js";
+import { loginLimiter } from "../middleware/rateLimit.middleware.js";
 
 
 const router = Router();
@@ -8,7 +8,7 @@ const router = Router();
 router.get("/login",(req,res)=>{
     res.render("login")
 })
-router.post("/login", loginUser);
+router.post("/login", loginLimiter, loginUser);
 
 // Logout route
 router.post("/logout", (req, res) => {
