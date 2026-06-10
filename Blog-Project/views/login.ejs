@@ -13,6 +13,7 @@
         <% } %>
         <h1>Login</h1>
        <form action="/login" method="POST" class="login">
+            <%- include('partials/csrf-field.partial.ejs') %>
             <div>
                 <label for=""></label>
                 <input type="text" name="username" placeholder="username" required>

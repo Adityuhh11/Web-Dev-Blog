@@ -18,6 +18,7 @@
         <a href="/contact" >contact</a>
         <% if (isLoggedIn) { %>
             <form action="/logout" method="POST" style="display: inline;">
+                <%- include('csrf-field.partial.ejs') %>
                 <button type="submit" class="logout-btn">Logout</button>
             </form>
         <% } else { %>

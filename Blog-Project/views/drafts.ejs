@@ -31,6 +31,7 @@
                     <div class="buttons">
                         <div class="delete-container">
                             <form action="/delete/<%= draft._id %>" method="POST" class="delete-form">
+                                <%- include('partials/csrf-field.partial.ejs') %>
                                 <button type="button" class="delete-trigger" data-blog-title="<%= draft.title %>" data-fallback="this draft">delete</button>
                             </form>
                         </div>

@@ -25,6 +25,7 @@
 
         <div class="editor-card">
             <form id="editor-form" action="/update/<%= blog._id %>" method="POST">
+                <%- include('partials/csrf-field.partial.ejs') %>
                 <input type="hidden" name="blogId" value="<%= blog._id %>">
 
                 <fieldset class="form-section">

@@ -6,6 +6,7 @@
     <section class="create-blog-container">
         <button type="button" class="back-arrow" aria-label="Go back" onclick="window.location.href='/about'">←</button>
         <form action="/edit-about" method="POST">
+            <%- include('partials/csrf-field.partial.ejs') %>
             <div class="header">
                 <div class="header-title">
                     <h1>Edit About Page</h1>
