@@ -6,6 +6,8 @@ Refresh_Token_Expiry=random time
 JWT_SECRET=long string
 ACCESS_TOKEN_SECRET=long string
 ACCESS_TOKEN_EXPIRY=random time
+CSRF_SECRET=long_random_string_for_csrf
+MASTER_API_KEY=your_n8n_api_key_here
 # Email Service Configuration (Resend)
 RESEND_API_KEY=your_resend_api_key_here
 EMAIL_FROM=onboarding@resend.dev
